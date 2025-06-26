@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+{% block content %}
+  <h1>Posts by {{ user.username }}</h1>
+  {% for post in posts.items %}
+    <article class="content-section">
+      <div class="post-header">
+        <div class="post-meta">
+          <strong>{{ post.author.username }}</strong><br>
+          <small>{{ post.date_posted.strftime('%d %b %Y') }}</small>
+        </div>
+
+        <div class="post-title">
+          <h2 class="article-title">
+            <a href="{{ url_for('post', post_id=post.id) }}">{{ post.title }}</a>
+          </h2>
+        </div>
+      </div>
+
+      <p class="article-content">{{ post.content }}</p>
+    </article>
+  {% endfor %}
+  <div class="pagination">
+    {% if posts.has_prev %}
+        <a href="{{ url_for('user_posts', username=user.username, page=posts.prev_num) }}">Previous</a>
+    {% endif %}
+    
+    {% for page_num in posts.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
+        {% if page_num %}
+            {% if posts.page == page_num %}
+                <strong>{{ page_num }}</strong>
+            {% else %}
+                <a href="{{ url_for('user_posts', username=user.username, page=page_num) }}">{{ page_num }}</a>
+            {% endif %}
+        {% else %}
+            <span>...</span>
+        {% endif %}
+    {% endfor %}
+    
+    {% if posts.has_next %}
+        <a href="{{ url_for('user_posts', username=user.username, page=posts.next_num) }}">Next</a>
+    {% endif %}
+  </div>
+{% endblock %}
