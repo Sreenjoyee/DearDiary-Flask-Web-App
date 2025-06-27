@@ -181,12 +181,12 @@ def send_reset_email(user):
                              json=payload, headers=headers)
 
     if response.status_code == 429:
-        flash("Email limit reached. Please try resetting your password tomorrow.", "warning")
+        flash("Email limit reached. Please try resetting your password tomorrow.", "info")
         return False
 
     if response.status_code != 201:
         print("Brevo Error:", response.status_code, response.text)
-        flash("An error occurred while sending the email. Please try again later.", "danger")
+        flash("An error occurred while sending the email. Please try again later.", "info")
         return False
 
     return True
