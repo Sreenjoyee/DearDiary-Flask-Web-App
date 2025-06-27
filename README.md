@@ -22,6 +22,7 @@ It allows users to write, update, and manage private or public diary entries —
 - [Flask] – web framework
 - [SQLAlchemy]– ORM for database operations
 - [SQLite]– lightweight DB used during development
+- [Postgres db] - On Render while deploying
 - [Flask-Login] – user session management
 - [Flask-WTF] – form validation
 - [Flask-Migrate] – database migrations
