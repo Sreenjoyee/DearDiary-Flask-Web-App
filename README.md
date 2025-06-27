@@ -30,9 +30,8 @@ It allows users to write, update, and manage private or public diary entries —
 
 
 ---
-I plan to deploy this on render after some changes
-for now it only runs on (only after I activate the run.py):
-http://192.168.1.5:5000
+Deployed on render:
+https://deardiary-flask-web-app.onrender.com
 
 
 
