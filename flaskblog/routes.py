@@ -77,7 +77,6 @@ def logout():
 def account():
     form = UpdateForm()
     if form.validate_on_submit():
-        print("is_private checkbox value submitted:", form.is_private.data)
         current_user.username= form.username.data
         current_user.email=form.email.data
         db.session.commit()
