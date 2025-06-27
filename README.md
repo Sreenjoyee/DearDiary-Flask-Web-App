@@ -22,6 +22,7 @@ It allows users to write, update, and manage private or public diary entries —
 - [Flask] – web framework
 - [SQLAlchemy]– ORM for database operations
 - [SQLite]– lightweight DB used during development
+- [Postgres db] - On Render while deploying
 - [Flask-Login] – user session management
 - [Flask-WTF] – form validation
 - [Flask-Migrate] – database migrations
@@ -29,9 +30,8 @@ It allows users to write, update, and manage private or public diary entries —
 
 
 ---
-I plan to deploy this on render after some changes
-for now it only runs on (only after I activate the run.py):
-http://192.168.1.5:5000
+Deployed on render:
+https://deardiary-flask-web-app.onrender.com
 
 
 
