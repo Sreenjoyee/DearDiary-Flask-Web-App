@@ -48,6 +48,7 @@ openai==1.66.3
 packaging==24.2
 pillow==11.2.1
 protobuf==4.21.12
+psycopg2-binary==2.9.10
 pydantic==2.10.6
 pydantic_core==2.27.2
 pygame==2.6.1
